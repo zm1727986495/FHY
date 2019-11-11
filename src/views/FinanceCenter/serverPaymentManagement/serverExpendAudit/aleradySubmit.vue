@@ -1,0 +1,160 @@
+<template>
+    <div class="unsortable">
+        <el-table
+            :data="tableData"
+            style="width: 100%;"
+            border
+            :row-class-name="tableRowClassName"
+            ref="topicTable">
+            <el-table-column
+            prop="paymentNumber"
+            align="center"
+            label="支出单号"
+            width="320"
+            show-overflow-tooltip
+            >
+            <template slot-scope="scope">
+                <div>
+                    <span class="table_action_span" @click="onlyRead(scope.row)">{{scope.row.paymentNumber}}</span>
+                </div>
+            </template>
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="companyName"
+            show-overflow-tooltip
+            label="合作商">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="costMonth"
+            label="费用月份">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="paymentTypeName"
+            show-overflow-tooltip
+            label="费用类型">
+            </el-table-column>
+            <!-- <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="结算单号">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="结算单类型">
+            </el-table-column> -->
+            <el-table-column
+            width="180"
+            align="center"
+            prop="paymentMoney"
+            show-overflow-tooltip
+            label="支付金额">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="paymentMethodName"
+            show-overflow-tooltip
+            label="付款方式">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="accountName"
+            show-overflow-tooltip
+            label="开户名">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="openingBankName"
+            label="所属银行">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="bankCardNumber"
+            show-overflow-tooltip
+            label="付款账号">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="createAtName"
+            label="创建人">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="createTime"
+            label="创建时间">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="commitAtName"
+            label="提交人">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="commitTime"
+            label="提交时间">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            show-overflow-tooltip
+            prop="auditAtName"
+            label="审核人">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="auditTime"
+            show-overflow-tooltip
+            label="审核时间">
+            </el-table-column>
+        </el-table>
+    </div>
+</template>
+<script>
+import spot from '@/assets/images/spot.png';
+export default {
+    props:["tableData"],
+    data(){
+        return{
+            spot:spot,
+            expands:[],
+        }
+    },
+    methods:{
+        edit(){
+            this.$emit("listen",true)
+        },
+        tableRowClassName({row, rowIndex}) {//表格斑马线设置
+            return rowIndex % 2 != 0 ? 'el-f0' : '';
+        },
+        onlyRead(val){
+            this.$emit("onlyRead",val,true)
+        }
+    }
+}
+</script>
+<style scoped>
+
+</style>

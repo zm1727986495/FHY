@@ -1,0 +1,403 @@
+<template>
+    <div class="simTable table_list unsortable">
+        <el-table
+            :data="tableData"
+            border
+            :cell-style="cellStyle" :header-cell-style ="cellStyle"
+            :row-class-name="tableRowClassName"
+            style="width: 100%">
+            <el-table-column
+            show-overflow-tooltip
+            prop="collectMoneyName"
+            align="center"
+            label="收款单号"
+            fixed
+            width="180">
+            <template slot-scope="scope">
+                <span class="table_action_span" @click="jumpMoney(scope.row)">{{scope.row.collectMoneyName}}</span>
+            </template>
+            </el-table-column>
+            <el-table-column
+            align="center"
+            type="expand"
+            fixed
+            width="20px"
+            >
+                <template slot-scope="scope" >
+                    <div class="simTable table_list unsortable">
+                        <el-table
+                    :data="scope.row.orderVOS"
+                    style="width: 100%;"
+                    :row-class-name="tableRowClassName"
+                    border
+                    row-key="id">
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="orderNumber"
+                        label="订单编号">
+                        <template slot-scope="prop">
+                            <div class="operation table_action_span" @click="orderDetails(prop.row)">
+                                {{prop.row.orderNumber}}
+                            </div>
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderStatusName"
+                        show-overflow-tooltip
+                        label="订单状态">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderTypeName"
+                        show-overflow-tooltip
+                        label="订单类型">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderGoodsType"
+                        show-overflow-tooltip
+                        label="订单货品类型">
+                        <template slot-scope="scope">
+                            {{scope.row.orderGoodsType==0?"定制":"标品"}}
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="categoryName"
+                        label="产品品类">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="brandName"
+                        label="产品品牌">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="contractMoney"
+                        label="合同金额">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="paymentAmount"
+                        label="已收金额">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="paymentAmount"
+                        label="本次收款金额">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="customerName"
+                        label="客户名称">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="customerPhone"
+                        label="客户电话">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="otherPhone"
+                        label="备用电话">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="address"
+                        label="订单地址">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="salesmanName"
+                        label="销售">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="surveyorName"
+                        label="测量员">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="designerName"
+                        label="设计师">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="storeName"
+                        label="所属门店">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="boothNumber"
+                        label="所属摊位">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="createOrderTime"
+                        label="创建订单时间">
+                        </el-table-column>
+                        <el-table-column
+                        show-overflow-tooltip
+                        align="center"
+                        prop="givenTime"
+                        label="合同签订时间">
+                        </el-table-column>
+                    </el-table>
+                    </div>
+                    
+                </template>
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="collectStoreName"
+            label="所属门店">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="collectMoney"
+            label="收款金额">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="actualStoreName"
+            label="实收门店">
+            </el-table-column>
+            <el-table-column
+            label="建材城收据号"
+            show-overflow-tooltip
+            prop="buildingReceiptNumber"
+            align="center"
+            width="180">
+            </el-table-column>
+            <el-table-column
+            label="内部单据号"
+            show-overflow-tooltip
+            prop="receiptNumber"
+            align="center"
+            width="180">
+            </el-table-column>
+            <el-table-column
+            label="家装合同号"
+            show-overflow-tooltip
+            prop="homeContractNumber"
+            align="center"
+            width="180">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="customerName"
+            label="客户名称">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="customerPhone"
+            label="客户电话">
+            </el-table-column>
+            <el-table-column
+                label="商场代金券"
+                show-overflow-tooltip
+                prop="shopCashCoupons" align="center" width="180">
+            </el-table-column>
+            <el-table-column
+                label="自有代金券"
+                show-overflow-tooltip
+                prop="ownCashCoupons" align="center" width="180">
+            </el-table-column>
+            <el-table-column
+            label="刷卡卡号"
+            show-overflow-tooltip
+            prop="bankCardId" align="center" width="180">
+            </el-table-column>
+            <el-table-column
+                label="备注"
+                show-overflow-tooltip
+                prop="remark" align="center" width="180">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="customerName"
+            show-overflow-tooltip
+            label="客户名称">
+            <template slot-scope="scope">
+                <div>
+                    {{scope.row.isCashier==0?"否":"是"}}
+                </div>
+            </template>
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="createName"
+            label="录入人">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="createTime"
+            label="录入时间">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="collectTypeName"
+            label="收款类型">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="collectWayName"
+            label="收款方式">
+            </el-table-column>
+            <el-table-column
+                label="公司收款账号"
+                show-overflow-tooltip
+                prop="bankCardId"   align="center" width="180">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="collectStoreBoothName"
+            label="所属摊位">
+            </el-table-column>
+            
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="actualStoreBoothName"
+            label="实收摊位">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="gatheringTime"
+            label="收款时间">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="commitName"
+            label="提交人">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="commitTime"
+            label="提交时间">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="auditTime"
+            label="审核日期">
+            </el-table-column>
+        </el-table>
+    </div>
+</template>
+<script>
+import spot from '@/assets/images/spot.png';
+import {listOrder} from 'api/FinanceCenter/creditManagement/customerDocumentAudit/index'
+export default {
+    props:["tableData"],
+    data(){
+        return{
+            currentPage:1,
+            pageSize:10,
+            total:10,
+            spot:spot,
+            expands:[],
+            childTable:[]
+        }
+    },
+    methods:{
+        expendChange(val){
+            listOrder(
+                {
+                  collectMoneyId:val.collectMoneyId
+                }
+            ).then(res=>{
+                this.childTable=res.data.rows;
+            })
+        },
+        jumpMoney(val){
+            this.$router.push({
+                path:'collectionInformation',
+                query:{
+                    id:val.collectMoneyId,
+                    edit:true,
+                    close:true,
+                }
+            })
+        },
+        cellStyle({row, column, rowIndex, columnIndex}){
+            // console.log(column,columnIndex)
+            if(columnIndex === 0){ // 指定坐标-- 第一列
+                return 'borderRight:none'
+            }else{
+                return ''
+            }
+        },
+        tableRowClassName({row, rowIndex}) {//表格斑马线设置
+            return rowIndex % 2 != 0 ? 'el-f0' : '';
+        },
+        rowClick(row){
+            console.log(row);
+            if (this.expands.indexOf(row.id) < 0) {
+                    this.expands = [];
+                    this.expands.push(row.id);
+                } else {
+                    let arr = this.expands.indexOf(row.id);
+                    this.expands.splice(arr,1);
+                }
+        },
+        orderDetails(val){
+            this.$router.push({
+                path:'/ordermm/details',
+                query:{
+                    orderId:val.orderId
+                }
+            })
+        }
+    }
+}
+</script>
+<style scoped>
+
+</style>

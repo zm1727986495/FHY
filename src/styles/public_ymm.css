@@ -1,0 +1,646 @@
+posR{
+  position: relative;
+}
+.cDanger{
+  color: #F56C6C;
+}
+.cSuccess{
+  color: #67C23A;
+}
+.head-nav .storeInfo .el-input__inner, .head-nav storeInfo input {
+  color: #fff;
+  border: none !important;
+  background-color: transparent !important;
+  text-align: right;
+  padding: 0;
+  height: 26px;
+  line-height: 26px;
+}
+.head-nav .storeInfo .el-input__suffix{
+  display: none;
+}
+.editgoods .el-tag + .el-tag {
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+.input-new-tag {
+  width: 98px;
+}
+.el-table .el-button{
+  padding: 0;
+}
+.editgoods .el-tag{
+  height: 36px;
+  line-height: 34px;
+  font-size: 14px;
+  margin-left: 0;
+  margin-right: 10px;
+  border-color: #dcdfe6;
+  color: #666;
+  background-color: transparent;
+}
+.editgoods .el-tag .el-icon-close{
+  color: #666;
+}
+.editgoods .el-tag .el-icon-close:hover{
+  color: #fff;
+}
+
+.el-textarea__inner{
+  min-height: 80px !important;
+}
+.smallTextarea .el-textarea__inner{
+  min-height: 60px !important;
+}
+.box-card{
+  font-size: 14px;
+}
+.box-card .el-card__header{
+  padding: 15px 20px;
+  position: relative;
+}
+.box-card .el-card__header .title{
+  line-height: 28px;
+  font-weight: bold;
+}
+.box-card .el-card__body{
+  font-size: 14px;
+  color: #666;
+}
+.table_action_span {
+  color: #409EFF;
+  cursor: pointer;
+}
+/*上传图片样式设置 - 开始*/
+.avatar-uploader .el-upload {
+  border: 1px dashed #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+.avatar-uploader .el-upload:hover {
+  border-color: #409EFF;
+}
+.avatar-uploader-icon {
+  font-size: 28px;
+  color: #8c939d;
+  width: 94px;
+  height: 94px;
+  line-height: 94px;
+  text-align: center;
+}
+.avatar {
+  width: 94px;
+  height: 94px;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+.el-upload--picture-card{
+  width: 94px;
+  height: 94px;
+  line-height: 102px;
+}
+.upBox .el-upload--picture-card{
+  width: 170px;
+  height: 175px;
+  line-height: 175px;
+}
+.el-upload-list--picture-card .el-upload-list__item{
+  width: 94px;
+  height: 94px;
+}
+/*上传图片样式设置 - 结束*/
+/*新增编辑页模块通用样式设置 - 开始*/
+.domain-row{
+  width: 217px;
+  margin-bottom: 22px;
+}
+.domain-row:last-child{
+  margin-bottom: 0;
+}
+.pageName span{
+  background: #016ec3;
+  font-size: 16px;
+  color: #fff;
+  padding: 6px 10px;
+  -webkit-border-radius: 4px 4px 0 0;
+  -moz-border-radius: 4px 4px 0 0;
+  border-radius: 4px 4px 0 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.uploadTip{
+  padding-left: 130px;
+  color: #999;
+}
+/*穿梭框设置*/
+.el-transfer-panel .el-transfer-panel__header .el-checkbox .el-checkbox__label{
+  font-size: 14px;
+}
+/*.el-date-editor--daterange.el-input, .el-date-editor--daterange.el-input__inner{*/
+/*  width: 230px;*/
+/*}*/
+/*.el-date-editor .el-range-separator{*/
+/*  width: 10% !important;*/
+/*}*/
+.payTypeContent{
+  padding-left: 70px;
+}
+.peroid_peroid{
+  width: 120px;
+}
+.peroid_month,.peroid_date{
+  width: 80px;
+}
+.contractAdd .line{
+  margin: 0 10px;
+}
+.opeList .ope{
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  margin-top: 8px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: 100%;
+  background-size: 100%;
+  cursor: pointer;
+}
+.opeList .ope.plus{
+  background-image: url(../assets/images/plus.png);
+}
+.opeList .ope.minus{
+  margin-left: 5px;
+  background-image: url(../assets/images/minus.png);
+}
+.el-table .el-form-item{
+  margin-bottom: 0;
+}
+.appendix .btn{
+  text-align: center;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.block{
+  display: block !important;
+}
+/*新增编辑页模块通用样式设置 - 结束*/
+.download{
+  color: #409EFF;
+}
+.download:hover {
+  color: #409EFF;
+  text-decoration: underline;
+}
+.modalForm .el-collapse-item__header{
+  /*padding: 0 10px;*/
+  color: #1c87d9;
+  font-size: 15px;
+}
+/*活动图片*/
+.imgItem{
+  width: 94px;
+  height: 94px;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  margin-right: 10px;
+}
+.line{
+  text-align: center;
+}
+.el-table .el-input__inner{
+  text-align: center !important;
+}
+.tips .el-badge .operaItems{
+  margin-left: 12px;
+}
+.dialog-btnList{
+  margin: 10px 0 !important;
+}
+.dialogBody{
+  position: relative;
+}
+.el-collapse:last-child{
+  border-bottom: none;
+}
+.textIndent .el-collapse-item__wrap{
+  padding-left: 70px;
+}
+.el-breadcrumb__inner a, .el-breadcrumb__inner.is-link{
+  color: #409EFF;
+}
+.rulesDialogForm .el-table th{
+  background-color: rgba(0,0,0,0.03) !important;
+}
+.viewForm .el-form-item,
+.queryForm .el-form-item{
+  margin-bottom: 10px;
+}
+.queryForm .el-col{
+  margin-bottom: 10px;
+}
+.infoForm .el-form-item,
+.infoForm .el-col{
+  margin-bottom: 0;
+}
+.queryForm .el-select, .queryForm .el-date-editor,
+.ruleForm .el-select, .ruleForm .el-date-editor,
+.viewForm .el-select, .viewForm .el-date-editor,
+.queryForm .el-input-number, viewForm .el-input-number{
+  width: 100%;
+}
+.queryForm .line {
+  line-height: 36px;
+}
+.queryForm .colChild{
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.accessory .table_list .el-table th{
+  background-color: #f5f7fa;
+}
+.searchBlock{
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+.pageTitle{
+  height: 50px;
+  line-height: 50px;
+  background-color: rgba(233, 233, 235, 0.2);
+  padding-left: 15px;
+  font-size: 14px;
+  font-weight: bold;
+}
+.tableHeader{
+  font-size: 14px;
+  line-height: 30px;
+  padding-left: 10px;
+}
+.moduleHeader{
+  font-size: 15px;
+  line-height: 30px;
+  margin-bottom: 10px;
+}
+.moduleHeader .title{
+  position: relative;
+  padding-left: 15px;
+  color: #006EC7;
+}
+.purchaseOrder .el-radio{
+  margin-right: 10px !important;
+}
+.purchaseOrder .el-radio__label {
+  padding-left: 3px;
+}
+.purchaseOrder .companyName {
+  position: relative;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.purchaseOrder {
+  font-size: 14px !important;
+}
+.storeForm .moduleHeader{
+  height: 54px;
+  line-height: 54px;
+  color: #006EC7;
+}
+.moduleHeaderBorder{
+  border: 1px solid #EBEEF5;
+  padding: 5px;
+}
+.moduleHeader .title:before{
+  content: '';
+  width: 4px;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -10px;
+  background-color: #006EC7;
+}
+.moduleHeader .label{
+  width: 85px;
+}
+.tableBox{
+  overflow: auto;
+  min-height: 300px;
+}
+.tableBoxMax{
+  max-height: 500px;
+}
+.multipleTable{
+  min-width: 3000px;
+  max-width: 3700px;
+}
+.multipleTableHeader{
+  font-size: 14px;
+  display: flex;
+  border: 1px solid #EBEEF5;
+  border-top-width: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  color: #909399;
+}
+.multipleTableHeaderBg{
+  background-color: #F5F7FA;
+}
+.multipleTableHeader li{
+  width: 145px;
+  padding: 2px 10px;
+  border-right: 1px solid #EBEEF5;
+  line-height: 26px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.multipleTableHeader li:first-child{
+  width: 50px;
+  padding: 2px 0;
+}
+.multipleTableHeader li .el-input{
+  margin: 0 auto;
+}
+.multipleTableHeader li .el-input .el-input__inner{
+  text-align: center;
+}
+.multipleTableHeader li .el-input-number{
+  width: 100%;
+}
+multipleTableHeader li.el-input--mini .el-input__inner {
+  height: 24px;
+  line-height: 24px;
+}
+.multipleTableAmount {
+  color: #F56C6C;
+}
+.multipleTableAmount li{
+  width: 100% !important;
+  text-align: left;
+  padding-left: 10px !important;
+  /*border-right-color: transparent;*/
+}
+.tableAmount {
+  padding: 2px 10px;
+  border-right: 1px solid #EBEEF5;
+  line-height: 26px;
+  color: #F56C6C;
+}
+.multipleTableHeader .commodityNumber{
+  width: calc((3700px - (165px * 18) - 50px) / 2);
+}
+.purchaseTable .commodityNumber{
+  width: calc((4000px - (165px * 22) - 50px));
+}
+/*.purchaseTable .el-table--scrollable-x .el-table__body-wrapper {*/
+/*  overflow-x: hidden;*/
+/*}*/
+.warehouseListTable{
+  width: 2800px;
+}
+.warehouseListTable .multipleTableHeader .commodityNumber{
+  width: calc(2800px - (165px * 16) - 50px);
+}
+.multipleTableHeader li .el-link, .multipleTableHeader li .el-link--inner{
+  width: 100%;
+  overflow: hidden;
+}
+.selectCommodity .el-dialog__body{
+  padding: 5px 15px;
+}
+.tabsBox{
+  position: relative;
+}
+.tabsBox .btnList{
+  position: absolute;
+  right: 4px;
+  top: 4px;
+}
+.calendar, .tools {
+  height: 430px;
+}
+.tools .box-card-content{
+  display: flex;
+  flex-wrap: wrap;
+}
+.tools .box-card-content li{
+  width: 50%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  line-height: calc((430px - 60px) / 5);
+  padding-left: 25px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+.tools .box-card-content li:nth-of-type(odd){
+  border-right: 1px solid #eee;
+}
+.tools .el-card__body{
+  padding: 0;
+}
+.workReport .box-card-content{
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+}
+.workReport .box-card-content li{
+  width: 20%;
+  padding: 15px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  margin-right: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.workReport .box-card-content li:last-child{
+  margin-right: 0;
+}
+.workReport .box-card-content li .icon{
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+  border: 1px solid #eee;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.workReport .box-card-content li .numberVal{
+  font-weight: bold;
+  font-size: 18px;
+}
+.workReport .box-card-content .contentItem p{
+  line-height: 24px;
+}
+.issuesTrendy .content{
+  display: flex;
+}
+.issuesTrendy .lineLeft{
+  width: 130px;
+  padding-top: 20px;
+}
+.issuesTrendy .lineLeft li{
+  margin-bottom: 15px;
+}
+.issuesTrendy .lineLeft .title{
+  line-height: 24px;
+}
+.issuesTrendy .lineLeft .numberVal{
+  font-size: 20px;
+  font-weight: bold;
+}
+#myChartLine{
+  border-left: 1px solid #eee;
+}
+.center{
+  text-align: center;
+}
+.t-right{
+  text-align: right;
+}
+/*加入库取弹出层样式设置*/
+.storageType{
+  height: 40px;
+  line-height: 40px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border-bottom: 1px solid #EBEEF5;
+}
+.warehouseDialog .el-table .cell,
+.warehouseDialog .el-table td{
+  padding: 0;
+}
+.warehouseDialog .el-table td .storageType:last-child{
+  border-bottom: none;
+}
+.warehouseDialog .moduleHeaderBorder{
+  border-bottom-color: transparent;
+  padding: 0 20px;
+  line-height: 48px;
+}
+.warehouseDialog .el-table .el-table__footer-wrapper .cell{
+  line-height: 40px;
+}
+.customAlert{
+  background-color: transparent !important;
+}
+.customAlert .el-alert__title{
+  font-size: 14px;
+}
+.content_body_warp {
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+.content_body_warp_left {
+  position: fixed;
+  width: 230px;
+  height: calc(100vh - 130px);
+  z-index: 1;
+  padding: 0px;
+  border: 1px solid #dddddd;
+  margin-right: 15px;
+  border-radius: 4px;
+  box-shadow: 0 2px 12px 0 rgba(0,0,0,.1);
+  overflow: auto;
+  transition: top .2s;
+}
+.content_body_warp .content_body_warp_right {
+  flex: 1;
+  overflow-x: hidden;
+  /* margin-left:240px; */
+}
+.bnone{
+  border: none;
+}
+.rulesBox {
+  height: 300px;
+}
+.rulesBox .itemBox {
+  height: 100%;
+  position: relative;
+  overflow-y: auto;
+}
+.rulesBox .leftBox .editRules{
+  width: 100%;
+  line-height: 30px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.rulesBox .leftBox, .rulesBox .rightBox {
+  border: 1px solid #e1e1e1;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+.rulesBox .rightBox{
+  padding: 15px;
+}
+.basicInfo .el-select {
+  display: block;
+}
+.rulesBox .el-checkbox {
+  display: block;
+  margin-right: 0;
+  margin-bottom: 5px;
+}
+.rulesButton {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.form-item-table {
+  margin-left: 140px;
+  margin-bottom: 15px;
+}
+.rulesDialogForm .line{
+  padding-left: 10px;
+  text-align: left;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.auditTabs{
+  min-height: 500px;
+}
+.basicInfo .richText .el-form-item .el-form-item__content {
+  line-height: normal !important;
+}
+@page {
+  size: auto;   /* auto is the initial value */
+  margin: 10%;
+}

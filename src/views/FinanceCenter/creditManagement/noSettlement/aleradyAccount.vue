@@ -1,0 +1,309 @@
+<template>
+    <div class="unsortable">
+        <el-table
+            :data="tableData"
+            style="width: 100%;"
+            border
+            :row-class-name="tableRowClassName"
+            @row-click="rowClick"
+            :cell-style="cellStyle" :header-cell-style ="cellStyle"
+            ref="topicTable">
+            <el-table-column
+            align="center"
+            fixed
+            type="selection">
+            </el-table-column>
+            <el-table-column
+            prop="name"
+            align="center"
+            label="收款单号"
+            width="300"
+            fixed
+            >
+             <template slot-scope="scope">
+                <div>
+                    <span class="table_action_span" @click="jumpList">{{scope.row.name}}</span>
+                </div>
+            </template>
+            </el-table-column>
+            <el-table-column
+            align="center"
+            type="expand"
+            fixed
+            width="20px">
+                <template slot-scope="scope" class="unsortable">
+                    <el-table
+                    :data="scope.row.orderVOS"
+                    style="width: 100%;"
+                    :row-class-name="tableRowClassName"
+                    border
+                    row-key="id">
+                        <el-table-column
+                        align="center"
+                        prop="orderNumber"
+                        label="订单编号">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderStatusName"
+                        show-overflow-tooltip
+                        label="订单状态">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderTypeName"
+                        show-overflow-tooltip
+                        label="订单类型">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="orderGoodsType"
+                        show-overflow-tooltip
+                        label="订单货品类型">
+                        <template slot-scope="scope">
+                            {{scope.row.orderGoodsType==0?"定制":"标品"}}
+                        </template>
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="categoryName"
+                        label="产品品类">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="brandName"
+                        label="产品品牌">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="customerName"
+                        label="客户名称">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="customerPhone"
+                        label="客户电话">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="otherPhone"
+                        label="备用电话">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="Address"
+                        label="订单地址">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="salesmanName"
+                        label="销售">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="surveyorName"
+                        label="测量员">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="designerName"
+                        label="设计师">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="storeName"
+                        label="所属门店">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="boothNumber"
+                        label="所属摊位">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="createOrderTime"
+                        label="创建订单时间">
+                        </el-table-column>
+                        <el-table-column
+                        align="center"
+                        prop="givenTime"
+                        label="合同签订时间">
+                        </el-table-column>
+                    </el-table>
+                </template>
+            </el-table-column>
+            
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="客户名称">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="客户电话">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="collectMoney"
+            label="收款金额">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="录入人">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="录入时间">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="收款类型">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="收款方式">
+            </el-table-column>
+            <el-table-column
+                label="内部收据号"
+                show-overflow-tooltip
+                prop="receiptNumber"   align="center" width="180">
+            </el-table-column>
+
+            <el-table-column
+                label="家装合同号"
+                show-overflow-tooltip
+                prop="homeContractNumber"   align="center" width="180">
+            </el-table-column>
+
+            <el-table-column
+                label="建材城收据号"
+                show-overflow-tooltip
+                prop="buildingReceiptNumber"   align="center" width="180">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="所属门店">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="所属摊位">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="实收门店">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="实收摊位">
+            </el-table-column>
+            <el-table-column
+            show-overflow-tooltip
+            width="180"
+            align="center"
+            prop="gatheringTime"
+            label="收款时间">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="提交人">
+            </el-table-column>
+            <el-table-column
+            width="180"
+            align="center"
+            prop="address"
+            label="提交时间">
+            </el-table-column>
+        </el-table>
+    </div>
+</template>
+<script>
+import spot from '@/assets/images/spot.png';
+export default {
+    props:["tableData"],
+    data(){
+        return{
+            spot:spot,
+            expands:[],
+            childTable:[],
+        }
+    },
+    methods:{
+        expendChange(row){
+            listOrder(
+                {
+                  collectMoneyId:row.collectMoneyId
+                }
+            ).then(res=>{
+                this.childTable=res.data.rows;
+            })
+        },
+        selectionChange(val){
+            
+        },
+         jumpList(){
+            this.$router.push({
+                path:'collectionInformation',
+                query:{
+                    id:val.collectMoneyId,
+                    edit:true,
+                    isShow:false
+                }
+            })
+        },
+        audit(){
+            this.$router.push({
+                path:'collectionInformation'
+            })
+        },
+        goBack(){
+            this.$emit('account',true)
+        },
+        cellStyle({row, column, rowIndex, columnIndex}){
+            // console.log(column,columnIndex)
+            if(columnIndex === 1){ // 指定坐标-- 第一列
+                return 'borderRight:none'
+            }else{
+                return ''
+            }
+        },
+        tableRowClassName({row, rowIndex}) {//表格斑马线设置
+            return rowIndex % 2 != 0 ? 'el-f0' : '';
+        },
+        rowClick(row){
+            console.log(row);
+            if (this.expands.indexOf(row.id) < 0) {
+                    this.expands = [];
+                    this.expands.push(row.id);
+                } else {
+                    let arr = this.expands.indexOf(row.id);
+                    this.expands.splice(arr,1);
+                }
+        }
+    }
+}
+</script>
+<style scoped>
+
+</style>
